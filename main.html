@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Strona poglądowa CV</title>
+    <link rel="stylesheet" href="CSS/css.css">
+    <meta charset="UTF-8">
+    <meta name="author" content="MichałK">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+            <div id="Logo">
+                <p class="Imie">Michał Kostrzewski</p>
+                <p class="Opis">Entuzjasta IT z zapałem do nauki front-endu </br>i odkrywania możliwości w dynamicznym świecie technologii</p>
+            </div>
+            <nav id="Menu">
+                
+                <a href="#Projekty">Projekty</a>
+                <a href="#about">O mnie</a>
+                <a href="#Kontakt">Kontakt</a>
+            
+            </nav>
+    </header>
+    <section class="pause"></section>
+    <section class="wstep">
+        <div id="Wstep">
+            <h1>Przedstawiam część nabytych umiejętności</h1>
+            <h3>Na obecnej stronie starałem się zamieścić wszystkie projekty jakie mam zamiar zrobić łącznie z tą stroną. Ustaliłem, że będzie to taki mini box na wszelkie projekty 😉.</h3>
+            <br>
+            <p>
+            <a href="#projekty" class="button">Przejdź do projektów</a>
+            <a href="#kontakt" class="button">Napisz do mnie</a>
+            </p>
+        </div>
+        
+        <div id="img">
+            <img src="jpg.png" alt="Picture">
+        </div>
+        
+    </section>
+    <section class="pause"></section>
+    <section id="about">
+        <h2>O mnie</h2>
+        <br>
+        <p>
+            Jestem absolwentem <strong>Technikum informatycznego</strong> oraz studiów ukierunkowanych pod technologie informatyczne (<strong>Społeczeństwo Informacyjne</strong>).
+            Od zawsze pasjonowało mnie to co możemy zobaczyć na ekranie i najbardziej kształciłem się w tym kierunku. Moje doświadczenie szkolne pozwoliło mi upatrzeć konkretny kierunek,
+            w który chciałbym podąrzać w przyszłości i do tego dąże (FE developer).
+            Studia pokazały mi bardziej zaawansowaną stronę języków programowania, bądź programów, których używa się na co dzień jak Excel, Word. Ta strona będzie moim schowkiem na małe projekty, miłego oglądania.
+            Podstawy poznanych do tej pory języków to między innymi:
+        </p>
+        <div id="languages">
+            <span>C</span>
+            <span>C#</span>
+            <span>C++</span>
+            <span>Python</span>
+            <span>JavaScript</span>
+            <span>PHP</span>
+            <span>SQL</span>
+            <span>HTML5 i CSS3</span>
+        </div>
+    </section>
+    <section class="pause"></section>
+    <section id="projekty">
+        <article>
+            <h2>Projekty</h2>
+            <div id="container">
+                <div class="pojemnik" data-projekt="1" style="background-image: url(nothing.png)">
+                    <div class="bottom-bar">Projekt 1</div>
+                    <div class="overlay">
+                        <span>🔍</span>
+                    </div>
+                </div>
+                <div class="pojemnik" data-projekt="2" style="background-image: url(nothing.png)">
+                    <div class="bottom-bar">Projekt 2</div>
+                    <div class="overlay">
+                        <span>🔍</span>
+                    </div>
+                </div>
+                <div class="pojemnik" data-projekt="3" style="background-image: url(nothing.png)">
+                    <div class="bottom-bar">Projekt 3</div>
+                    <div class="overlay">
+                        <span>🔍</span>
+                    </div>
+                </div>
+                <div class="pojemnik" data-projekt="4" style="background-image: url(nothing.png)">
+                    <div class="bottom-bar">Projekt 4</div>
+                    <div class="overlay">
+                        <span>🔍</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section class="pause"></section>
+    <section class="CV">
+        <div class="opak">
+            <div id="content">
+                <p><strong>Chcesz zobaczyć moje CV?</strong></p>
+                <p style="color: grey;">Pobierz moje CV lub umów się poprzez formularz.</p>
+            </div>
+            <a href="" download class="przycisk-cv">Pobierz CV</a>
+        </div>
+    </section>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modal-title">Tytuł projektu</h3>
+            <img id="modal-img" src="nothing.png" alt="Podgląd projektu">
+            <p id="modal-desc">Tutaj znajdziesz opis projektu, technologie, zdjęcia i inne szczegóły.</p>
+        </div>
+    </div>
+    
+    <section id="kontakt">
+
+    </section>
+
+<script>
+    const pojemniki = document.QuerySelectorAll('.pojemnik');
+    const modal = document.getElementById('modal');
+
+</script>
+</body>
+<footer></footer>
+</html>
