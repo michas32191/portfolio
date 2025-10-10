@@ -135,7 +135,7 @@
     <script>
 
         (function() {
-        emailjs.init("XaGbLV6FoAP1aJMGg"); // np. emailjs.init("abc123XYZ")
+        emailjs.init("XaGbLV6FoAP1aJMGg");
         })();
 
         const form = document.getElementById("formularz");
@@ -144,11 +144,9 @@
         form.addEventListener("submit", function (e) {
         e.preventDefault();
 
-    // Zablokuj przycisk i pokaż status
         button.textContent = "Wysyłanie...";
         button.disabled = true;
 
-    // Wyślij e-mail przez EmailJS
         emailjs.sendForm("service_39fz05c", "template_tdnsxwz", this).then(() => {
             button.textContent = "Wysłano!";
             button.classList.add("wyslano");
@@ -162,7 +160,7 @@
         }, (error) => {
             console.error("Błąd:", error);
             button.textContent = "Błąd wysyłki";
-            button.style.backgroundColor = "#dc2626"; // czerwony
+            button.style.backgroundColor = "#dc2626";
             setTimeout(() => {
                 button.textContent = "Wyślij wiadomość";
                 button.style.backgroundColor = "";
@@ -221,4 +219,5 @@
 <footer>
     © 2025 Michał Kostrzewski — Portfolio
 </footer>
+
 </html>
