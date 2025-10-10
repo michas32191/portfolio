@@ -15,13 +15,14 @@
             </div>
             <nav id="Menu">
                 
-                <a href="#Projekty">Projekty</a>
+                <a href="#projekty">Projekty</a>
                 <a href="#about">O mnie</a>
-                <a href="#Kontakt">Kontakt</a>
+                <a href="#kontakt">Kontakt</a>
             
             </nav>
     </header>
-    <section class="pause"></section>
+
+    
     <section class="wstep">
         <div id="Wstep">
             <h1>Przedstawiam część nabytych umiejętności</h1>
@@ -38,11 +39,12 @@
         </div>
         
     </section>
-    <section class="pause"></section>
+
+    
     <section id="about">
         <h2>O mnie</h2>
         <br>
-        <p>
+        <p style="color: rgba(128, 128, 128, 0.9);"
             Jestem absolwentem <strong>Technikum informatycznego</strong> oraz studiów ukierunkowanych pod technologie informatyczne (<strong>Społeczeństwo Informacyjne</strong>).
             Od zawsze pasjonowało mnie to co możemy zobaczyć na ekranie i najbardziej kształciłem się w tym kierunku. Moje doświadczenie szkolne pozwoliło mi upatrzeć konkretny kierunek,
             w który chciałbym podąrzać w przyszłości i do tego dąże (FE developer).
@@ -60,67 +62,163 @@
             <span>HTML5 i CSS3</span>
         </div>
     </section>
-    <section class="pause"></section>
+
+    
     <section id="projekty">
         <article>
             <h2>Projekty</h2>
-            <div id="container">
-                <div class="pojemnik" data-projekt="1" style="background-image: url(nothing.png)">
-                    <div class="bottom-bar">Projekt 1</div>
-                    <div class="overlay">
-                        <span>🔍</span>
+            <div class="projekty-container">
+
+                <div class="projekt" data-id="1">
+                <img src="nothing.png" alt="Projekt 1">
+                    <div class="projekt-info">
+                    <h3>Nazwa projektu</h3>
+                    <p>Opis projektu</p>
+                    <div class="technologie">
+                        <span>Technologia 1</span>
+                        <span>Technologia 2</span>
+                    </div>
                     </div>
                 </div>
-                <div class="pojemnik" data-projekt="2" style="background-image: url(nothing.png)">
-                    <div class="bottom-bar">Projekt 2</div>
-                    <div class="overlay">
-                        <span>🔍</span>
+
+                <div class="projekt" data-id="2">
+                    <img src="nothing.png" alt="Projekt 2">
+                    <div class="projekt-info">
+                        <h3>Nazwa projektu</h3>
+                        <p>Opis projektu</p>
+                        <div class="technologie">
+                            <span>Technologia 1</span>
+                            <span>Technologia 2</span>
+                        </div>
                     </div>
                 </div>
-                <div class="pojemnik" data-projekt="3" style="background-image: url(nothing.png)">
-                    <div class="bottom-bar">Projekt 3</div>
-                    <div class="overlay">
-                        <span>🔍</span>
-                    </div>
-                </div>
-                <div class="pojemnik" data-projekt="4" style="background-image: url(nothing.png)">
-                    <div class="bottom-bar">Projekt 4</div>
-                    <div class="overlay">
-                        <span>🔍</span>
-                    </div>
-                </div>
+
             </div>
         </article>
     </section>
-    <section class="pause"></section>
+
     <section class="CV">
-        <div class="opak">
-            <div id="content">
-                <p><strong>Chcesz zobaczyć moje CV?</strong></p>
-                <p style="color: grey;">Pobierz moje CV lub umów się poprzez formularz.</p>
+        <div class="box">
+            <div class="content">
+                <p style="font-size: 18px;"><strong>Chcesz zobaczyć moje CV?</strong></p>
+                <p style="color: rgb(65, 65, 65);">Pobierz moje CV lub umów się poprzez formularz.</p>
             </div>
-            <a href="" download class="przycisk-cv">Pobierz CV</a>
+            <div class="przyciski">
+                <a href="" download class="button-cv">Pobierz CV</a>
+                <a href="#kontakt" class="button-cv">Skontaktuj się</a>
+            </div>
         </div>
     </section>
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h3 id="modal-title">Tytuł projektu</h3>
-            <img id="modal-img" src="nothing.png" alt="Podgląd projektu">
-            <p id="modal-desc">Tutaj znajdziesz opis projektu, technologie, zdjęcia i inne szczegóły.</p>
+            <h3 id="modalTitle"></h3>
+            <img id="modalImg" src="" alt="Zdjęcie projektu">
+            <p id="modalDesc"></p>
         </div>
     </div>
+
     
     <section id="kontakt">
-
+        <div class="box2">
+            <h2>Kontakt</h2>
+            <p style="color: rgba(128, 128, 128, 0.9);">Masz pytania? Napisz wiadomość - odpiszę najszybciej, jak będę mógł.</p>
+            <form id="formularz">
+                <input class="input" type="text" name="from_name" id="imie" placeholder="Imię i Nazwisko" required>
+                <input class="input" type="email" name="from_email" id="email" placeholder="E-mail" required>
+                <textarea class="wiadomosc" id="wiadomosc" name="message" placeholder="Wiadomość" required></textarea>
+                <button type="submit" class="przycisk" id="wyslij">Wyślij wiadomość</button>
+            </form>
+        </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+
+        (function() {
+        emailjs.init("XaGbLV6FoAP1aJMGg"); // np. emailjs.init("abc123XYZ")
+        })();
+
+        const form = document.getElementById("formularz");
+        const button = document.getElementById("wyslij");
+
+        form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+    // Zablokuj przycisk i pokaż status
+        button.textContent = "Wysyłanie...";
+        button.disabled = true;
+
+    // Wyślij e-mail przez EmailJS
+        emailjs.sendForm("service_39fz05c", "template_tdnsxwz", this).then(() => {
+            button.textContent = "Wysłano!";
+            button.classList.add("wyslano");
+
+            setTimeout(() => {
+                button.textContent = "Wyślij wiadomość";
+                button.classList.remove("wyslano");
+                button.disabled = false;
+                form.reset();
+            }, 3000);
+        }, (error) => {
+            console.error("Błąd:", error);
+            button.textContent = "Błąd wysyłki";
+            button.style.backgroundColor = "#dc2626"; // czerwony
+            setTimeout(() => {
+                button.textContent = "Wyślij wiadomość";
+                button.style.backgroundColor = "";
+                button.disabled = false;
+            }, 3000);
+        });
+    });
+    console.log();
+    </script>
 
 <script>
-    const pojemniki = document.QuerySelectorAll('.pojemnik');
+    const projekty = document.querySelectorAll('.projekt');
     const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImg = document.getElementById('modalImg');
+    const modalDesc = document.getElementById('modalDesc');
+    const closeBtn = document.querySelector('.close');
+
+    const daneProjektow = {
+    1: {
+        title: "Kalkulator",
+        desc: "Aplikacja napisana w Pythonie z interfejsem Tkinter. Pozwala wykonywać podstawowe działania matematyczne.",
+        img: "nothing.png"
+    },
+    2: {
+        title: "Gra Snake",
+        desc: "Prosta gra stworzona przy użyciu biblioteki Pygame. Sterujesz wężem, zbierasz punkty i unikasz kolizji.",
+        img: "nothing.png"
+    }
+    };
+
+    projekty.forEach(p => {
+        p.addEventListener('click', () => {
+            const id = p.dataset.id;
+            const projekt = daneProjektow[id];
+
+            modalTitle.textContent = projekt.title;
+            modalImg.src = projekt.img;
+            modalDesc.textContent = projekt.desc;
+
+            modal.classList.add('active');
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+    })
+    modal.addEventListener('click', (e) =>{
+        if (e.target === modal){
+            modal.classList.remove('active');
+        }
+    });
 
 </script>
 </body>
-<footer></footer>
+<footer>
+    © 2025 Michał Kostrzewski — Portfolio
+</footer>
 </html>
-
